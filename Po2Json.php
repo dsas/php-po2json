@@ -29,7 +29,7 @@ class Po2Json
 
         // Parse po file
         $poparser = new \Sepia\PoParser();
-        $translations = $poparser->readFile($path);
+        $translations = $poparser->parseFile($path);
         $_headers = self::parseHeaders($poparser->headers());
         return self::convertToJson($_headers, $translations, $fuzzy, $format, $domain);
 
